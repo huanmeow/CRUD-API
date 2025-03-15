@@ -13,7 +13,9 @@ class ApiService {
     }
   }
 
-  static Future<bool> addAccount(String username, String password, String game, int price) async {
+
+  static Future<bool> addAccount(String username, String password, String game,
+      int price) async {
     final response = await http.post(
       Uri.parse(baseUrl),
       headers: {"Content-Type": "application/json"},
@@ -27,7 +29,8 @@ class ApiService {
     return response.statusCode == 201;
   }
 
-  static Future<bool> updateAccount(int id, String username, String password, String game, int price) async {
+  static Future<bool> updateAccount(int id, String username, String password,
+      String game, int price) async {
     final response = await http.put(
       Uri.parse("$baseUrl/$id"),
       headers: {"Content-Type": "application/json"},
